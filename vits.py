@@ -26,6 +26,7 @@ class VisionTransformerMoCo(VisionTransformer):
     def __init__(self, stop_grad_conv1=False, **kwargs):
         super().__init__(**kwargs)
         # Use fixed 2D sin-cos position embedding
+        self.num_tokens = 1
         self.build_2d_sincos_position_embedding()
 
         # weight initialization
